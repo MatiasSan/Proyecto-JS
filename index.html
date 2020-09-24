@@ -4,16 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!--  Hoja estilo css -->
     <link rel="stylesheet" href="style.css">
+
     <!-- font google -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
 
     <!--  bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>Calculadora Intereses</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
+
+    <title>Home</title>
 </head>
 
 <body>
@@ -37,19 +43,18 @@
         </div>
     </div>
 
-    <div class="container text-center py-5">
+    <!-- botonera -->
 
-        <button type="button" class="btn btn-lg btn-outline-dark btn-block">Click para calcular</button>
+    <div class="container text-center py-5">
+        <a href="calculadora.html">
+            <button type="button" class="btn btn-lg btn-outline-dark btn-block">Click para calcular</button></a>
 
     </div>
-    <!-- slider -->
-    <div class="container"></div>
-
 
 
     <!-- slider -->
 
-    <div class="container">
+    <div class="container-fluid text-center">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
@@ -88,27 +93,53 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+    </div>
 
-        <!-- Calculadora cuotas -->
+    <!-- seccion -->
+    <section>
+        <div class="container-fluid py-5 my-5 text-center">
+            <h2 class="display-4 py-4">Lo hacemos sencillo.</h2>
+            <p class="lead">Servicio de cálculo fácil y para nada díficil de utilizar.</p>
+            <div class="container py-5">
+                
+                <a href="calculadora.html"><img src="images/FalabellaLogo.jpg" alt="logoFalabella" class="img-fluid float-left"></a>
+                <a href="calculadora.html"><img src="images/Logo_Paris_Cencosud.png" alt="logoParis" class="img-fluid"></a>
+                <a href="calculadora.html"><img src="images/Ripley_logo.png" alt="logoRipley" class="img-fluid float-right"></a>
+            </div>
+        </div>
+    </section>
 
-        <div class="container"></div>
-
-        <!-- footer -->
-
-        <div class="container"></div>
 
 
 
-        <script src="app.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-        </script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-        </script>
+    <!-- footer -->
+    <footer>
+        <div class="container-fluid py-5 fondo text-center">
+
+            <i class="fab fa-twitter fa-2x pr-3"></i>
+            <i class="fab fa-instagram fa-2x"></i>
+            <i class="fab fa-github fa-2x pl-3"></i>
+
+            <p class="copy"><i class="far fa-copyright "></i>Desarrollada por Matías C</p>
+
+
+        </div>
+    </footer>
+
+
+
+  
+
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

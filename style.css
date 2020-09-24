@@ -5,6 +5,10 @@ body {
 
 }
 
+h2, .lead {
+    color: #15549a!important;
+}
+
 .header-topbar {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -16,13 +20,7 @@ body {
 
 }
 
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-}
+ 
 
 .btn-outline-dark {
     color: #15549a!important;
@@ -63,4 +61,16 @@ body {
     right: 0;
     background: #15549a;
     opacity: 0.7;
+}
+
+/* logos casas comerciales */
+
+.img-fluid {
+    width: 15vw;
+}
+
+/* footer */
+
+footer {
+    background-color: #15549a;
 }
