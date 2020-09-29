@@ -1,33 +1,52 @@
-
-//Solicitando nombre a usuario
+// Solicitud nombre y apellido. 
 
 var nombre = prompt("Por favor ingresa tu nombre: ");
 
-var primeraLetra = nombre.slice(0, 1);
-00
-var mayusPrimeraLetra = primeraLetra.toUpperCase();
+let nombreProcesado = procesarNombre(nombre);
 
-var restoNombre = nombre.slice(1, nombre.length);
+var apellido = prompt("Por favor ingresa tu apellido: ");
 
-restoNombre = restoNombre.toLowerCase();
-
-var mayusNombre = mayusPrimeraLetra + restoNombre;
+let apellidoProcesado = procesarApellido(apellido);
 
 
 
-while (nombre === '') {
-    alert("Debes ingresar un nombre!");
-    nombre = prompt('Tu nombre aca: ');
-    var primeraLetra = nombre.slice(0, 1);
+// LOOP si no ingresa datos. 
 
-    var mayusPrimeraLetra = primeraLetra.toUpperCase();
+while (nombre === "" || nombre == null) {
+    alert("Debes ingresar tu nombre y tú apellido!!");
+    nombre = prompt("Tu nombre acá: ");
+    apellido = prompt("Tu apellido acá: ");
+    let nombreProcesado = procesarNombre(nombre);
+    let apellidoProcesado = procesarApellido(apellido);
 
-    var restoNombre = nombre.slice(1, nombre.length);
-
-    restoNombre = restoNombre.toLowerCase();
-
-    var mayusNombre = mayusPrimeraLetra + restoNombre;
+    
 
 }
 
-alert('Bienvenido a la web ' + mayusNombre);
+ 
+
+
+alert('Bienvenido a la web ' + nombreProcesado + " " + apellidoProcesado);
+
+
+// probando función. 
+
+
+function procesarNombre(nombre) {
+
+    var primeraLetra = nombre.slice(0, 1);
+    var mayusPrimeraLetra = primeraLetra.toUpperCase();
+    var restoNombre = nombre.slice(1, nombre.length);
+    restoNombre = restoNombre.toLowerCase();
+    var mayusNombre = mayusPrimeraLetra + restoNombre;
+    return mayusNombre;
+}
+
+function procesarApellido(apellido) {
+    var primeraLetraApellido = apellido.slice(0, 1);
+    var mayusPrimeraLetra = primeraLetraApellido.toUpperCase();
+    var restoApellido = apellido.slice(1, apellido.length);
+    restoApellido = restoApellido.toLowerCase();
+    var mayusApellido = mayusPrimeraLetra + restoApellido;
+    return mayusApellido;
+}
