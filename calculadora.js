@@ -1,8 +1,26 @@
+//Intento de calculadora
+
+class Calculadora {
+   constructor(casa_comercial, nCuotas, montoCompra) {
+       this.casa_comercial = casa_comercial;
+       this.nCuotas = nCuotas;
+       this.montoCompra = montoCompra;
+   } 
+}
+
+
+
+
+
+
+
+
+
 //Proto objeto
 
 
 
-class Calculadora {
+/* class Calculadora {
     TASA_INTERES;
     constructor(casa_comercial, nCuotas, montoCompra){
         this.casa_comercial = casa_comercial;
@@ -30,7 +48,7 @@ class Calculadora {
 }
 
 
-let cal1 = new Calculadora('falabella', 12, 12000);
+let cal1 = new Calculadora('falabella', 12, 12000); */
 
 
   //numero de cuotas
