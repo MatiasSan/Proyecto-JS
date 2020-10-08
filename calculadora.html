@@ -2,6 +2,16 @@
 <html lang="en">
 
 <head>
+    <script src="calculadora.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,38 +61,49 @@
     </div>
     <div class="container">
         <form action="">
-            <label for="monto">Ingresa el valor de la compra</label> <br>
+            <label for="">Ingresa el valor de la compra</label> <br>
             <input type="number" name="monto" id="monto"> <br><br>
             <label for="casasComerciales">Casa Comerciales</label> <br><br>
             <select name="casasComerciales" id="casasComerciales"> 
-                <option value="">Falabella</option>
-                <option value="">Ripley</option>
-                <option value="">Paris</option>
+                <option value="0">--Selecciona una opción--</option>
+                <option value="1">Falabella</option>
+                <option value="2">Ripley</option>
+                <option value="3">Paris</option>
             </select> <br><br>
             <label for="cuotas">Ingresa el Número de cuotas</label> <br><br>
             <select name="cuotas" id="cuotas"> 
-                <option value="">1</option>
-                <option value="">2</option>
-                <option value="">3</option>
-                <option value="">4</option>
-                <option value="">5</option>
-                <option value="">6</option>
-                <option value="">7</option>
-                <option value="">8</option>
-                <option value="">9</option>
-                <option value="">10</option>
-                <option value="">11</option>
-                <option value="">12</option>
-            </select> <br><br>
-            <label for="total">Total a pagar</label> <br>
-            <input type="number" name="" id="">
+                <option value="0">--Selecciona una opción--</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select> 
+
+             <!-- Resultado Operación Calculadora  -->
+            
+            <span></span>
 
             <br><br>
-            <input type="button" onclick="alert('Estamos Procesando tu calculo')" value="Calcula!">
-            <input type="reset"> 
+            <input type="button" onclick="interes()" value="Calcula!">
+<!--             <input type="button" onclick="ciclo()" value="Ciclo">
+ -->            <input type="reset"> 
         </form>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <div class="container py-5">
+    <h2 class="">El monto a pagar es de <span id="montoFinal"></span>, y tu cuota mensual es de <span id="cuotaMensual"></span>.
+    </h2>
+    </div>
     <!-- footer -->
     <footer>
         <div class="container-fluid py-5 text-center fondo">
@@ -101,16 +122,7 @@
 
 
 
-    <script src="desafio.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous">
-    </script>
+   
 </body>
 
 </html>
