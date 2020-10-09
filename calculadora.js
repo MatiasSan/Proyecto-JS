@@ -54,7 +54,7 @@ function interes() {
     interesPAris = 1.08;
 
     //aqui se opera en base al valor de select "casasComerciales"
-    
+
     switch (casaSeleccionada) {
         case 1: //Falabella
             montoTotal = montoIngresado * interesFalabella;
@@ -71,27 +71,13 @@ function interes() {
 
     // Calculo cuota mensual
 
-    switch (numeroDeCuotasSeleccionada) {
-        case 1:
-            valorFinalCuota = parseInt(cuotaSeleccionada) / 1; 
-            break;
-        case 2:
-            valorFinalCuota = parseInt(cuotaSeleccionada) / 2;
-            break;
-        case 3:
-            valorFinalCuota = parseInt(cuotaSeleccionada) / 3;
-            break;
-        default:
-            break;
-    }
+    console.warn("Numero de cuotas seleccionada" + numeroDeCuotasSeleccionada);
+
+    valorFinalCuota = Math.floor(parseInt(montoTotal) / numeroDeCuotasSeleccionada);
 
     console.log(montoTotal)
-    document.getElementById("montoFinal").innerHTML = montoTotal;
 
-    //Calcular el valor de la cuota
-
-    console.log(valorFinalCuota);
-    document.getElementById("cuotaMensual").innerHTML = valorFinalCuota;
+    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`;
 
     return;
 }
