@@ -1,3 +1,9 @@
+
+
+    
+
+/* $("").click() */
+
 function interes() {
     var montoIngresado;
     var interesFalabella;
@@ -11,8 +17,10 @@ function interes() {
 
 
     //Validar monto de la compra
-    montoIngresado = parseInt(document.getElementById("monto").value);
-    if (document.getElementById("monto").value == '') {
+    
+
+    montoIngresado = parseInt($("#monto").val());
+    if ($("#monto").val() == '') {
         alert('Debe ingresar un valor');
         return;
     }
@@ -75,9 +83,10 @@ function interes() {
 
     valorFinalCuota = Math.floor(parseInt(montoTotal) / numeroDeCuotasSeleccionada);
 
-    console.log(montoTotal)
-
-    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`;
-
+    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`; 
+    
+   /*  $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`); */
     return;
 }
+
+
