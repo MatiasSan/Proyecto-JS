@@ -1,8 +1,8 @@
-
-
-    
-
 /* $("").click() */
+
+function mensajeDeError(mensaje){
+    
+}
 
 function interes() {
     var montoIngresado;
@@ -17,21 +17,24 @@ function interes() {
 
 
     //Validar monto de la compra
-    
+
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        alert('Debe ingresar un valor');
+        $("#error").html("Debe ingresar un valor");
+
         return;
     }
 
     if (Number.isNaN(montoIngresado)) {
-        alert('Debe ingresar un monto');
+        $("#error").html("Debe ingresar un valor");
+
         return;
     }
 
     if (montoIngresado < 0) {
         alert('Debe ingresar un monto superior a 0');
+        
         return;
     }
 
@@ -39,7 +42,8 @@ function interes() {
     var casaComercial = document.getElementById("casasComerciales");
     var casaSeleccionada;
     if (casaComercial.options[casaComercial.selectedIndex].value == '0') {
-        alert('Debe seleccionar una casa comercial');
+        $("#error1").html("Debe ingresar una casa comercial");
+
         return;
     }
     casaSeleccionada = parseInt(casaComercial.options[casaComercial.selectedIndex].value);
@@ -48,7 +52,7 @@ function interes() {
     var numeroDeCuotasSeleccionada;
     var cuotaSeleccionada = document.getElementById("cuotas");
     if (cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value == '0') {
-        alert('Debe seleccionar una cantidad de cuotas');
+        $("#error2").html("Debe ingresar una cantidad de cuotas");
         return;
     }
     numeroDeCuotasSeleccionada = parseInt(cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value);
@@ -83,10 +87,8 @@ function interes() {
 
     valorFinalCuota = Math.floor(parseInt(montoTotal) / numeroDeCuotasSeleccionada);
 
-    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`; 
-    
-   /*  $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`); */
+    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`;
+
+    /*  $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`); */
     return;
 }
-
-
