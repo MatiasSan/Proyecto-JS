@@ -75,4 +75,12 @@ footer {
     background-color: #15549a;
 }
 
+
+/* Gif de loading */
+
+.giphy-embed{
+    display: none;
+}
+
+
 /* @media screen and () */

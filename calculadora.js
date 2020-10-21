@@ -1,8 +1,12 @@
-/* $("").click() */
+/* Animaciones */
 
-function mensajeDeError(mensaje){
-    
-}
+/* $("button").on("click", function () {
+    $("#error").fadeToggle();
+}); */
+
+$("").on("click", function(){
+    $(".titulo").slideToggle();
+});
 
 function interes() {
     var montoIngresado;
@@ -13,28 +17,25 @@ function interes() {
 
 
 
-
-
-
     //Validar monto de la compra
 
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        $("#error").html("Debe ingresar un valor");
+        $("#error").html("Debe ingresar un valor").fadeToggle("slow");
 
         return;
     }
 
     if (Number.isNaN(montoIngresado)) {
-        $("#error").html("Debe ingresar un valor");
+        $("#error").html("Debe ingresar un valor").fadeToggle("slow");
 
         return;
     }
 
     if (montoIngresado < 0) {
         alert('Debe ingresar un monto superior a 0');
-        
+
         return;
     }
 

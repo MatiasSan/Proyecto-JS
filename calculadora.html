@@ -48,7 +48,7 @@
 
     <!-- calculadora -->
     <div class="container py-5 text-center">
-        <h2>Ingresa los datos</h2>
+        <h2 class="titulo">Ingresa los datos</h2>
     </div>
     <div class="container text-center">
         <form action="">
@@ -83,8 +83,10 @@
             <span></span>
 
             <br><br>
-            <input type="button" onclick="interes()" value="Calcula!" class="btn btn-primary "> <!-- evento on click gatillado -->
-            <input type="reset" onclick="$('#montoFinal').empty();$('#error').empty()" class="btn btn-primary"> 
+            
+            <input type="button" onclick="interes(); " value="Calcula!" class="btn btn-primary "> <!-- evento on click gatillado -->
+            
+            <input type="reset" onclick="$('#montoFinal').empty(); $('#error').empty(); $('#error1').empty(); $('#error2').empty() " class="btn btn-primary"> 
         </form>
     </div>
     <br>
