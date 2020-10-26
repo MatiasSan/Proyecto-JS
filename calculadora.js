@@ -1,13 +1,3 @@
-/* Animaciones */
-
-/* $("button").on("click", function () {
-    $("#error").fadeToggle();
-}); */
-
-$("").on("click", function(){
-    $(".titulo").slideToggle();
-});
-
 function interes() {
     var montoIngresado;
     var interesFalabella;
@@ -22,13 +12,13 @@ function interes() {
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        $("#error").html("Debe ingresar un valor").fadeToggle("slow");
+        $("#error").html("Debe ingresar un valor");
 
         return;
     }
 
     if (Number.isNaN(montoIngresado)) {
-        $("#error").html("Debe ingresar un valor").fadeToggle("slow");
+        $("#error").html("Debe ingresar un valor");
 
         return;
     }
@@ -90,6 +80,5 @@ function interes() {
 
     document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`;
 
-    /*  $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`); */
     return;
 }
