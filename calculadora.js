@@ -1,3 +1,5 @@
+
+
 function interes() {
     var montoIngresado;
     var interesFalabella;
@@ -6,34 +8,41 @@ function interes() {
     var cantidadDeCuotas;
 
 
+    //error 
+   /*  $(document).ready(function() {
+        $("#error").hide(); 
+    }); */
+     
+
+  /*    function mensajeError(mensaje) {
+        $("#error").html(mensaje).fadeToggle(2000);
+    }  */
+
 
     //Validar monto de la compra
 
+     
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        $("#error").html("Debe ingresar un valor");
-
+        
+        $("#error").html("Debe ingresar un valor").fadeToggle(2000);
         return;
     }
 
     if (Number.isNaN(montoIngresado)) {
-        $("#error").html("Debe ingresar un valor");
+        $("#error").html("Debe ingresar un valor").fadeToggle(2000);
 
         return;
     }
 
-    if (montoIngresado < 0) {
-        alert('Debe ingresar un monto superior a 0');
-
-        return;
-    }
+    
 
     //Validar la casa comercial
     var casaComercial = document.getElementById("casasComerciales");
     var casaSeleccionada;
     if (casaComercial.options[casaComercial.selectedIndex].value == '0') {
-        $("#error1").html("Debe ingresar una casa comercial");
+        $("#error1").html("Debe ingresar una casa comercial").fadeToggle(2000);
 
         return;
     }
@@ -43,7 +52,7 @@ function interes() {
     var numeroDeCuotasSeleccionada;
     var cuotaSeleccionada = document.getElementById("cuotas");
     if (cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value == '0') {
-        $("#error2").html("Debe ingresar una cantidad de cuotas");
+        $("#error2").html("Debe ingresar una cantidad de cuotas").fadeToggle(2000);
         return;
     }
     numeroDeCuotasSeleccionada = parseInt(cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value);
