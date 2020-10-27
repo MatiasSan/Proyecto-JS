@@ -1,4 +1,37 @@
+$("#error").hide();
 
+$.ajax({
+    url: 'data/tiendas.json', //Url o path del archivo o servicio
+    success: function (tiendas) { //La funcion en caso que todo vaya bien
+        //Con foreach
+        // tiendas.forEach(function (tienda, indice) {
+        //     $("#casasComerciales").append(`<option value="${indice + 1}">${tienda}</option>`);
+        // });
+        //Con For nativo
+        for (i = 0; i < tiendas.length; i++) {
+            $("#casasComerciales").append(`<option value="${i + 1}">${tiendas[i]}</option>`);
+        }
+    },
+    error: function () { //La funcion que controla error
+        desplegarMensaje("Se cayo la consulta al archivo");
+    }
+});
+
+
+$("").on("click", function () {
+    $(".titulo").slideToggle();
+});
+
+function desplegarMensaje(textoError) {
+    $("#error").html(textoError).fadeIn("slow");
+}
+
+function resetBtn() {
+    $('#montoFinal').empty();
+    $('#error').fadeOut("slow");
+    $('#error1').empty();
+    $('#error2').empty()
+}
 
 function interes() {
     var montoIngresado;
@@ -8,41 +41,34 @@ function interes() {
     var cantidadDeCuotas;
 
 
-    //error 
-   /*  $(document).ready(function() {
-        $("#error").hide(); 
-    }); */
-     
-
-  /*    function mensajeError(mensaje) {
-        $("#error").html(mensaje).fadeToggle(2000);
-    }  */
-
 
     //Validar monto de la compra
 
-     
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        
-        $("#error").html("Debe ingresar un valor").fadeToggle(2000);
+        desplegarMensaje("Debe ingresar un valor");
+
         return;
     }
 
     if (Number.isNaN(montoIngresado)) {
-        $("#error").html("Debe ingresar un valor").fadeToggle(2000);
+        desplegarMensaje("Debe ingresar un valor");
 
         return;
     }
 
-    
+    if (montoIngresado < 0) {
+        alert('Debe ingresar un monto superior a 0');
+
+        return;
+    }
 
     //Validar la casa comercial
     var casaComercial = document.getElementById("casasComerciales");
     var casaSeleccionada;
     if (casaComercial.options[casaComercial.selectedIndex].value == '0') {
-        $("#error1").html("Debe ingresar una casa comercial").fadeToggle(2000);
+        desplegarMensaje("Debe ingresar una casa comercial");
 
         return;
     }
@@ -52,7 +78,7 @@ function interes() {
     var numeroDeCuotasSeleccionada;
     var cuotaSeleccionada = document.getElementById("cuotas");
     if (cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value == '0') {
-        $("#error2").html("Debe ingresar una cantidad de cuotas").fadeToggle(2000);
+        desplegarMensaje("Debe ingresar una cantidad de cuotas");
         return;
     }
     numeroDeCuotasSeleccionada = parseInt(cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value);
@@ -87,7 +113,9 @@ function interes() {
 
     valorFinalCuota = Math.floor(parseInt(montoTotal) / numeroDeCuotasSeleccionada);
 
-    document.getElementById("montoFinal").innerHTML = `El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`;
+    $("#error").hide();
+    $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`);
 
+    
     return;
 }
