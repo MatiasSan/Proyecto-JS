@@ -1,12 +1,9 @@
+/* Animaciones */
 
-
-/* animación */
-
+/* $("button").on("click", function () {
+    $("#error").fadeToggle();
+}); */
 $("#error").hide();
-
-
-/* llamado JSON y USO DE AJAX */
-
 
 $.ajax({
     url: 'data/tiendas.json', //Url o path del archivo o servicio
@@ -26,23 +23,19 @@ $.ajax({
 });
 
 
-/* mensaje de error */
-
+$("").on("click", function () {
+    $(".titulo").slideToggle();
+});
 
 function desplegarMensaje(textoError) {
     $("#error").html(textoError).fadeIn("slow");
 }
 
-
 function resetBtn() {
     $('#montoFinal').empty();
     $('#error').fadeOut("slow");
-    $('#error1').empty();
-    $('#error2').empty()
+    
 }
-
-
-
 
 function interes() {
     var montoIngresado;
@@ -52,14 +45,14 @@ function interes() {
     var cantidadDeCuotas;
 
 
+
     //Validar monto de la compra
 
-     
 
     montoIngresado = parseInt($("#monto").val());
     if ($("#monto").val() == '') {
-        
         desplegarMensaje("Debe ingresar un valor");
+
         return;
     }
 
@@ -69,7 +62,11 @@ function interes() {
         return;
     }
 
-    
+    if (montoIngresado < 0) {
+        alert('Debe ingresar un monto superior a 0');
+
+        return;
+    }
 
     //Validar la casa comercial
     var casaComercial = document.getElementById("casasComerciales");
@@ -85,7 +82,7 @@ function interes() {
     var numeroDeCuotasSeleccionada;
     var cuotaSeleccionada = document.getElementById("cuotas");
     if (cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value == '0') {
-        desplegarMensaje("Debe ingresar una cantidad de cuotas"); 
+        desplegarMensaje("Debe ingresar una cantidad de cuotas");
         return;
     }
     numeroDeCuotasSeleccionada = parseInt(cuotaSeleccionada.options[cuotaSeleccionada.selectedIndex].value);
@@ -120,11 +117,8 @@ function interes() {
 
     valorFinalCuota = Math.floor(parseInt(montoTotal) / numeroDeCuotasSeleccionada);
 
-   /*  Ocultar mensajes de validaciones al momentos de calcular
- */
     $("#error").hide();
-
-    $("#montoFinal").html = (`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`);
+    $("#montoFinal").html(`El monto a pagar es de $${montoTotal} y tu cuota mensual es de $${valorFinalCuota}`);
 
     return;
 }

@@ -76,5 +76,11 @@ footer {
 }
 
 
-/* Animaciones en cajas de errores */
+/* Gif de loading */
 
+.giphy-embed{
+    display: none;
+}
+
+
+/* @media screen and () */
